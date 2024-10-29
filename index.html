@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta property="og:title" content="루민 - Just a Normal Student Dev">
+      <meta property="og:image" content="https://cdn.discordapp.com/avatars/1248106780848951400/35a077b7d623c0c2f7700128e9ec5b09.webp?size=1024&format=webp&width=640&height=640">
+      <meta property="og:description" content="Hello, I'm RuMiNDev! Just a Normal Student Dev.">
+      <meta name="theme-color" content="#0079F2">
+      <meta name="description" content="Hello, I'm RuMiNDev! Just a Normal Student Dev.">
+      <title>Profile Page</title>
+      <link rel="shortcut icon" href="https://cdn.discordapp.com/avatars/1248106780848951400/35a077b7d623c0c2f7700128e9ec5b09.webp?size=1024&format=webp&width=640&height=640">
+      <link href="style.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <style>
+         #snake-game {
+         display: none;
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: rgba(0, 0, 0, 0.8);
+         z-index: 1000;
+         }
+         #snake-canvas {
+         display: block;
+         margin: auto;
+         background: #000;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="card">
+         <div class="logo-wrapper">
+            <img id="profile-pic" src="https://cdn.discordapp.com/avatars/1248106780848951400/35a077b7d623c0c2f7700128e9ec5b09.webp?size=1024&format=webp&width=640&height=640" alt="Profile Picture">
+         </div>
+         <div class="text">
+            <h1><a href="https://discord.com/users/1248106780848951400" target="_blank">RuMiNDev</a></h1>
+            <p><a href="https://time.is/KST" target="_blank">Time: KoreaStandardTime(KST)</a></p>
+            <h2>About Me</h2>
+            <ul>
+               <li>Just a Normal Student Dev</li>
+               <li>Skills: Python, SQL, Lua</li>
+            </ul>
+            <h2>Contacts</h2>
+            <ul>
+               <li>Email: <a href="mailto:rumindev@gmail.com" class="email">rumindev@gmail.com</a></li>
+            </ul>
+            <h2>Servers</h2>
+            <ul>
+               <li>FreeServer@H&R</li>
+               <li>Dynamic@Owner</li>
+            </ul>
+            <h2>Social Media</h2>
+            <ul class="social-media">
+               <li><a href="https://github.com/rumindev" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+               <li><a href="https://www.youtube.com/@rumin.i" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+            </ul>
+         </div>
+      </div>
+      <canvas id="snake-game"></canvas>
+      <script>
+         // Profile picture click event
+         let clickCount = 0;
+         const profilePic = document.getElementById('profile-pic');
+         profilePic.addEventListener('click', function() {
+            clickCount++;
+            profilePic.classList.add('clicked');
+            setTimeout(() => profilePic.classList.remove('clicked'), 500);
+            const funnyMessages = [
+               "Wow, you really like clicking!",
+               "Clickity click!",
+               "Keep going, something might happen!",
+               "Are you having fun yet?",
+               "Click master in the making!",
+               "You're a pro clicker!",
+               "Wow, you're really good at this!",
+               "fire 🔥",
+               "W this is getting harder",
+               "You're a clicker now!",
+               "Popcat lol",
+               "bro you're insane"
+            ];
+            if (clickCount % 10 === 0) {
+                const message = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
+                alert(`You clicked the profile picture ${clickCount} times! ${message}`);
+            }
+         });
+      </script>
+   </body>
+</html>
